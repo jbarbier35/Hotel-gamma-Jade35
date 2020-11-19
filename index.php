@@ -33,7 +33,7 @@ get_header();
         </div>
         <div class="form-group">
             <label for="search-price-to">Prix max</label>
-            <input type="number" id="search-price-to" min="0" value="200">
+            <input type="number" id="search-price-to" min="0" value="120">
         </div>
         <button type="submit" class="button button-primary">
             <i class="fa fa-search"></i>
