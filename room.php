@@ -30,7 +30,24 @@ get_header();
                 <li><i class="fa fa-expand"></i> <?= $room["size"]; ?>m<sup>2</sup></li>
                 <li><i class="fa fa-euro"></i> <?= $room["price"]; ?></li>
             </ul>
-            <p><?= $room["description"]; ?></p>
+            <p><?= $room["description"]; ?> 
+            <?php
+$array = array( 'Description ' => array(  ),
+                 );
+
+foreach( $array as $key => $value )
+{
+  echo $key . ': <br />';
+ 
+  foreach( $value as $valeur )
+    echo '  ' . $valeur . '<br />';
+   
+  echo '<br />';
+}
+?>
+
+Ce logement de type chambre pour 2 personnes dispose de 1 lit et d'une surface totale de 40m2. Son prix est de 90€ par nuit
+            
         </div>
     </article>
 </section>
