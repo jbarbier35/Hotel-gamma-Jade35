@@ -3,7 +3,7 @@ require_once "functions.php";
 require_once "model/database.php";
 
 $rooms = getAllRooms();
-$types = getAllRows("type");
+$types = getAllTypes();
 // debug($rooms);
 
 get_header();
@@ -16,7 +16,6 @@ get_header();
 <section class="container home-content">
     <h1>Bienvenue à l'hotel Gamma</h1>
 
-    <!-- TODO: Faire fonctionner le formulaire de recherche -->
     <form class="form-search">
         <div class="form-group">
             <label for="search-type">Type</label>
@@ -33,7 +32,7 @@ get_header();
         </div>
         <div class="form-group">
             <label for="search-price-to">Prix max</label>
-            <input type="number" id="search-price-to" min="0" value="120">
+            <input type="number" id="search-price-to" min="0" value="200">
         </div>
         <button type="submit" class="button button-primary">
             <i class="fa fa-search"></i>
