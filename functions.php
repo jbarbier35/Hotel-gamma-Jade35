@@ -25,21 +25,65 @@ function get_footer() {
 /*Pour le Crud Logement*/
 
 function readLogement($id) {
-    /*$con = getAllRooms;();
-    $requete = "SELECT * FROM room where id = '$id";
+    $connection = getAllRooms();
+    $query = "SELECT * FROM room where id = '$id";
     $stmt = $con->query($requete);
-    $rows = $stmt->fetchAll();*/
+    $rows = $stmt->fetchAll();
+    if (!empty($rows)){
+        return $rows[0];
+    }
 }
 
 function createLogement($beds, $persons, $size, $price, $photo) {
-    
+    try {
+        $connection = getAllRooms();
+        $sql = "INSERT INTO room (beds, persons, size, price, photo) 
+                VALUES ('$beds', '$persons', '$size' ,'$price, $photo')";
+        $connection->exec($sql);
+    }
+    catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+    }
 }
+    
 
 function udapteLogement($id, $beds, $persons, $size, $price, $photo) {
+    try {
+        $connection = getAllRooms();
+        $query = "UPDATE room set 
+                    lits = '$beds',
+                    personnes = '$persons',
+                    surface = '$size',
+                    photo = '$photo',
+                    prix = '$price' 
+                    where id = '$id' ";
+        $stmt = $connection->query($query);
+    }
+    catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+    }
+}
+  
+    
+
+function deleteLogement($id) {
+    try {
+        $connection = getAllRooms();
+        $query = "DELETE from room where id = '$id' ";
+        $stmt = $con->query($requete);
+    }
+    catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+    }
     
 }
 
-
-function deleteLogement($id) {
+function getNewRoom() {
+    $room['id'] = "";
+    $room['beds'] = "";
+    $room['persons'] = "";
+    $room['size'] = "";
+    $room['price'] = "";
+    $room['photo'] = "";
     
 }
