@@ -37,7 +37,7 @@
                     <a href="#">Actualités</a>
                 </li>
                 <li>
-                    <a href="#">Nos Logements</a>
+                    <a href="list-room.php">Nos Logements</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>

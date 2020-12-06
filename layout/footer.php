@@ -6,7 +6,7 @@
             <li><a href="#">Nos Chambres</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <p>Copyright 2019 Tous droits réservés</p>
+        <p>Copyright <?php echo date("Y"); ?> Tous droits réservés</p>
     </div>
     <div class="footer-secondary"></div>
 </footer>
