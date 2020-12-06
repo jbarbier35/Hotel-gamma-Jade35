@@ -3,7 +3,7 @@ require_once "functions.php";
 require_once "model/database.php";
 
 $rooms = getAllRooms();
-$types = getAllTypes();
+$types = getAllRows("type");
 // debug($rooms);
 
 get_header();
@@ -16,6 +16,7 @@ get_header();
 <section class="container home-content">
     <h1>Bienvenue à l'hotel Gamma</h1>
 
+    <!-- TODO: Faire fonctionner le formulaire de recherche -->
     <form class="form-search">
         <div class="form-group">
             <label for="search-type">Type</label>
